@@ -21,3 +21,5 @@ Tämän tekemällä pystyin varmistamaan, että tila oikeasti muuttaa oikeudet h
 Ajoin tilan kaikille orjille komennolla: `sudo salt '*' state.apply helloworld`, ja se näytti toimivan. </br>
 Tarkistin vielä "/usr/local/bin/" hakemistosta, miltä oikeudet näytti ja kaikki näytti hyvältä.
 
+![Screenshot 2022-11-22 145707](https://user-images.githubusercontent.com/116954333/203319706-2cf38102-8e16-4e9a-9c97-f2c8c659046b.png)
+
