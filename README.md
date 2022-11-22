@@ -73,7 +73,11 @@ Sitten tein `init.sls`-tiedoston: `sudoedit init.sls`, niin kuin aiemmissakin ko
     - mode: '0755'
 ```
 
+Sitten kopioin samaan tyyliin: `sudo cp hello.py /usr/local/bin/`. </br>
+Ajoin tilan kaikille Slave-koneille komennolla: `sudo salt '*' state.apply hellopy`. </br>
+Kaikki toimi kuten pitikin.
 
+![Screenshot 2022-11-22 163747](https://user-images.githubusercontent.com/116954333/203341719-d2fdf41b-80da-46eb-951b-ce8e669a2af6.png)
 
 
 
