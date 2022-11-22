@@ -33,7 +33,7 @@ date +'%d/%m/%y'
 ```
 Testasin scriptin toimivuuden komennolla: `bash whatsup.sh`
 
-Sitten tein samanlaisen `init.sls`-tiedoston kuin a) kohdassa: </br>
+Sitten tein samanlaisen `init.sls`-tiedoston: `sudoedit init.sls` kuin a) kohdassa: </br>
 ```
 /usr/local/bin/whatsup.sh:
   file.managed:
@@ -61,7 +61,17 @@ for i in greeting:
     continue
   print(i)
 ```
-Testasin koodin toimivuuden: `python3 hello.py`.
+Testasin koodin toimivuuden: `python3 hello.py`, ja se näytti toimivan oletuksien mukaan.
+
+![Screenshot 2022-11-22 161913](https://user-images.githubusercontent.com/116954333/203337525-8c2c9050-63f2-4dee-ac87-a3349b9610d4.png)
+
+Sitten tein `init.sls`-tiedoston: `sudoedit init.sls`, niin kuin aiemmissakin kohdissa: 
+```
+/usr/local/bin/hello.py:
+  file.managed:
+    - source: salt://hellopy/hello.py
+    - mode: '0755'
+```
 
 
 
