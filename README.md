@@ -41,9 +41,27 @@ Sitten tein samanlaisen `init.sls`-tiedoston kuin a) kohdassa: </br>
     - mode: '0755'
 ```
 
+Kopioin myös `whatsup.sh`-scriptin "/usr/local/bin/" hakemistoon: `sudo cp whatsup.sh /usr/local/bin/`. </br>
+Sitten ajoin tilan kaikille Slave-koneille komennolla: `sudo salt '*' state.apply whatsup`. </br>
+Kaikki näytti toimivan niinkuin pitikin.
 
+![Screenshot 2022-11-22 155240](https://user-images.githubusercontent.com/116954333/203331358-9e137975-52dd-40bc-ae1c-1474ecbfa241.png)
 
+__c) hello.py. Tee järjestelmään uusi komento Pythonilla ja asenna se orjille. Vinkkejä: Hei maailma riittää, mutta propellihatut saavat toki koodaillakin. Shebang on "#!/usr/bin/python3". Helpoin Python-komento on: print("Hei Tero!")__
 
+Aloitin tekemällä harjoitukselle oman kansion: `sudo mkdir /srv/salt/hellopy`. </br>
+Tein sinne `hello.py`-tiedoston: `sudoedit hello.py`, ja sisällöksi koodin, joka tulostaa "Hello!" horisontaalisti sekä vaakasuorasti.
+
+```
+#!/usr/bin/python3
+print("Hello!")
+greeting = "Hello!"
+for i in greeting:
+  if i == "H":
+    continue
+  print(i)
+```
+Testasin koodin toimivuuden: `python3 hello.py`.
 
 
 
