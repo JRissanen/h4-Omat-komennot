@@ -79,6 +79,8 @@ Kaikki toimi kuten pitikin.
 
 ![Screenshot 2022-11-22 163747](https://user-images.githubusercontent.com/116954333/203341719-d2fdf41b-80da-46eb-951b-ce8e669a2af6.png)
 
+__d) Laiskaa skriptailua. Tee kansio, josta jokainen skripti kopioituu orjille.__
+
 
 
 
