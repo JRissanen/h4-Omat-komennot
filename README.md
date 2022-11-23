@@ -81,16 +81,43 @@ Kaikki toimi kuten pitikin.
 
 __d) Laiskaa skriptailua. Tee kansio, josta jokainen skripti kopioituu orjille.__
 
+Aloitin jälleen tekemällä uuden kansion harjoitusta varten: `sudo mkdir /srv/salt/recurse`. </br>
+Tein "recurse" kansion sisään uuden kansion scriptejä varten: `sudo mkdir scripts`. </br>
+Kopioin kaikki aiemmissa harjoituksissa luomani scriptit tähän uuteen "scripts" kansioon: </br>
+`sudo cp <tiedoston nimi> /srv/salt/recurse/scripts/`.
 
+![Screenshot 2022-11-22 165925](https://user-images.githubusercontent.com/116954333/203606293-f79cb51b-2ee1-4c32-a268-cf0c43fcc13d.png)
 
+Vaihdoin aiemmin luomieni scriptien oikeudet kansiossa "/usr/local/bin/" muotoon "644", jotta näkisin ajaessani uuden tilan, että vaihtuuko se kaikilla muotoon "755", niin kuin olisi tarkoitus. </br>
+Oikeuksien vaihto: `sudo chmod 644 hello.py helloworld.sh whatsup.sh`.
 
+Tein `init.sls`-tiedoston:
+```
+/usr/local/bin/:
+  file.recurse:
+    - source: salt://recurse/scripts/
+    - mode: '0755'
+```
 
+Yritin ajaa tilaa: `sudo salt '*' state.apply recurse`, mutta sain seuraavan virheilmoituksen:
 
+![Screenshot 2022-11-22 171438](https://user-images.githubusercontent.com/116954333/203609519-8b1885c0-b3e8-4602-84cd-84334f00dfe5.png)
 
+Virheilmoituksesta tajusin, että `init.sls`-tiedostoa täytyy muuttaa. </br>
+Poistin kohdan `- mode: '0755'` ja lisäsin tiedostoon kohdat `- dir_mode: '0755'` ja `- file_mode: '0755'`, kuten virheilmoituksessa neuvottiin tekemään. </br>
+Nyt `init.sls`-tiedosto näyttää seuraavalta: </br>
+```
+/usr/local/bin/:
+  file.recurse:
+    - source: salt://recurse/scripts/
+    - dir_mode: '0755'
+    - file_mode: '0755'
+```
 
+Ajoin tilan uudestaan muutosten jälkeen: `sudo salt '*' state.apply recurse`. </br>
+Kuinka ollakaan, kaikki toimi.
 
-
-
+![Screenshot 2022-11-23 195538](https://user-images.githubusercontent.com/116954333/203616343-b58a6dc7-bf55-4db0-8da6-9c476600325e.png)
 
 
 
