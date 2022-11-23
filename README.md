@@ -55,7 +55,7 @@ Tein sinne `hello.py`-tiedoston: `sudoedit hello.py`, ja sisällöksi koodin, jo
 ```
 #!/usr/bin/python3
 print("H e l l o !")
-greeting = "Hello!"
+greeting = "H e l l o !"
 for i in greeting:
   if i == "H" or i == " ":
     continue
