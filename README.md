@@ -54,10 +54,10 @@ Tein sinne `hello.py`-tiedoston: `sudoedit hello.py`, ja sisällöksi koodin, jo
 
 ```
 #!/usr/bin/python3
-print("Hello!")
+print("H e l l o !")
 greeting = "Hello!"
 for i in greeting:
-  if i == "H":
+  if i == "H" or i == " ":
     continue
   print(i)
 ```
