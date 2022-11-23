@@ -119,18 +119,36 @@ Kuinka ollakaan, kaikki toimi.
 
 ![Screenshot 2022-11-23 195538](https://user-images.githubusercontent.com/116954333/203616343-b58a6dc7-bf55-4db0-8da6-9c476600325e.png)
 
+__e) Intel. Etsi kolme loppuprojektia joltain vanhalta kurssitoteutukselta. Kuvaile projektit tiiviisti, viittaa ja linkitä alkuperäiseeen raporttin. Tässä alakohdassa ei tarvitse vielä kokeilla mitään koneella, vaan voit kuvailla niitä oheismateriaalin perusteella.__
 
+Simo Tossavainen: Simppeli hyötyohjelma moduli. </br>
+Linkki: https://simotossavainen.wordpress.com/2021/05/19/h7-oma-moduli/
 
+* Modulin tarkoitus on laittaa firefox muistamaan edellinen istunto, eli vanhat välilehdet.
+* Ohjelma asentaa libre officen, treen ja firefoxin.
+* Asetusten muokkaukset firefox selaimella näkyivät hyvin kun config tiedostoja tarkkailtiin terminaalissa.
+* Tosiaan simppeli ja käytännöllinen moduli.
 
+Roope, Palvelinten Hallinta: Harjoitus 6 raportti. </br>
+Linkki: https://roopelinux.wordpress.com/2018/05/11/palvelinten-hallinta-harjoitus-6-raportti/
 
+* Projektin aihe oli WordPressin asentaminen Saltilla.
+* WordPress tietokanta luotiin WordPressin oman Mysql-ohjeen pohjalta.
+* Saltilla luotiin omat tilat seuraaville ohjelmille:
+ * apache-state
+ * mysql-state
+ * database-state
+ * wordpress-state
+* Valmiin modulin loppukäyttäjiä ovat esimerkiksi ihmiset, jotka haluavat nopeasti kokeilla WordPressia.
 
+Ilmo Gröhn, Palvelinten Hallinta H7b – Oma Moduli. </br>
+Linkki: https://ilmogrohn.wordpress.com/2021/05/18/palvelinten-hallinta-h7b/
 
+* Projektin tarkoitus oli luoda Saltilla tila, joka asentaa Slave-koneille libre officen ja siihen käyttäjän haluaman fontin.
+* Alussa käytettiin perus `cmd.run whoami` kaltaisia komentoja.
+* Etsittiin `find` komennon avulla oikea libre officen tiedosto tietokoneelta, jota voitiin muokata.
+* Testi tehtiin kahdelle eri koneelle lopuksi ja molemmille onnistui libre officen asennus ja fontin vaihtaminen Salt tilan avulla.
 
+__e) Lukua, ei luottamusta. Kokeile yhtä kohdassa d-Intel löytämääsi modulia koneella. Tämä on infraa koodina, joten luottamusta ei tarvita. Voit lukea koodista, mitä olet ajamassa.__
 
-
-
-
-
-
-
-
+En saanut valitettavasti kokeiltua yhtäkään moduulia.
